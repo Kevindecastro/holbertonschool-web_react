@@ -1,4 +1,4 @@
-// Définition de l'interface Student
+// Définition de l'interface Student avec les propriétés requises
 interface Student {
   firstName: string;
   lastName: string;
@@ -6,51 +6,50 @@ interface Student {
   location: string;
 }
 
-// Création de deux objets étudiants
+// Création de deux objets étudiants conformes à l'interface Student
 const student1: Student = {
-  firstName: 'Alice',
-  lastName: 'Dupont',
-  age: 22,
+  firstName: 'Kevin',
+  lastName: 'Castro',
+  age: 40,
   location: 'Paris',
 };
 
 const student2: Student = {
-  firstName: 'Bob',
-  lastName: 'Martin',
-  age: 24,
-  location: 'Lyon',
+  firstName: 'Noam',
+  lastName: 'Travert',
+  age: 19,
+  location: 'Le Mans',
 };
 
-// Tableau des étudiants
+// Stockage des étudiants dans un tableau
 const studentsList: Student[] = [student1, student2];
 
-// Création du tableau HTML
+// Création d'une table HTML pour afficher les informations des étudiants
 const table = document.createElement('table');
 const headerRow = document.createElement('tr');
+const headerFirstName = document.createElement('th');
+const headerLocation = document.createElement('th');
 
-// En-têtes du tableau
-const headers = ['Prénom', 'Lieu'];
-headers.forEach((headerText) => {
-  const header = document.createElement('th');
-  header.textContent = headerText;
-  headerRow.appendChild(header);
-});
+headerFirstName.textContent = 'First Name';
+headerLocation.textContent = 'Location';
+
+headerRow.appendChild(headerFirstName);
+headerRow.appendChild(headerLocation);
 table.appendChild(headerRow);
 
-// Remplissage du tableau avec les données des étudiants
+// Parcours du tableau d'étudiants pour ajouter chaque étudiant à la table
 studentsList.forEach((student) => {
   const row = document.createElement('tr');
-
   const firstNameCell = document.createElement('td');
-  firstNameCell.textContent = student.firstName;
-  row.appendChild(firstNameCell);
-
   const locationCell = document.createElement('td');
-  locationCell.textContent = student.location;
-  row.appendChild(locationCell);
 
+  firstNameCell.textContent = student.firstName;
+  locationCell.textContent = student.location;
+
+  row.appendChild(firstNameCell);
+  row.appendChild(locationCell);
   table.appendChild(row);
 });
 
-// Ajout du tableau au corps du document
+// Ajout de la table au corps du document HTML
 document.body.appendChild(table);
