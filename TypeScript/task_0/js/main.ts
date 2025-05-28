@@ -21,14 +21,21 @@ const student2: Student = {
   location: 'Le Mans',
 };
 
-// Stockage des étudiants dans un tableau
+// Stockage des étudiants dans un tableau typé Student[]
 const studentsList: Student[] = [student1, student2];
 
 // Création d'une table HTML pour afficher les informations des étudiants
-const table = document.createElement('table');
-const headerRow = document.createElement('tr');
-const headerFirstName = document.createElement('th');
-const headerLocation = document.createElement('th');
+const table: HTMLTableElement = document.createElement('table');
+table.border = "1";
+table.style.borderCollapse = 'collapse';
+table.style.marginTop = '20px';
+table.style.textAlign = 'left';
+table.style.width = '50%';
+
+// Création de l'en-tête de la table
+const headerRow: HTMLTableRowElement = document.createElement('tr');
+const headerFirstName: HTMLTableCellElement = document.createElement('th');
+const headerLocation: HTMLTableCellElement = document.createElement('th');
 
 headerFirstName.textContent = 'First Name';
 headerLocation.textContent = 'Location';
@@ -38,10 +45,10 @@ headerRow.appendChild(headerLocation);
 table.appendChild(headerRow);
 
 // Parcours du tableau d'étudiants pour ajouter chaque étudiant à la table
-studentsList.forEach((student) => {
-  const row = document.createElement('tr');
-  const firstNameCell = document.createElement('td');
-  const locationCell = document.createElement('td');
+studentsList.forEach((student: Student): void => {
+  const row: HTMLTableRowElement = document.createElement('tr');
+  const firstNameCell: HTMLTableCellElement = document.createElement('td');
+  const locationCell: HTMLTableCellElement = document.createElement('td');
 
   firstNameCell.textContent = student.firstName;
   locationCell.textContent = student.location;
