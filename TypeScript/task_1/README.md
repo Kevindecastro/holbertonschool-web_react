@@ -1,4 +1,3 @@
-Voici le fichier `README.md` **complet, propre, commenté et traduit en 
 # 📘 Projet TypeScript — Tâche 1
 
 Ce projet démontre les concepts de base de TypeScript à travers l’utilisation d’interfaces, de types de fonctions et de classes. Le code se trouve dans `task_1/js/main.ts` et est compilé à l’aide de Webpack.
