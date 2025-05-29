@@ -9,9 +9,13 @@ Ce projet explore des fonctionnalités avancées de TypeScript telles que les in
 task\_2/
 ├── js/
 │   └── main.ts
+├── dist/
+│   ├── bundle.js
+│   └── index.html
 ├── package.json
 ├── tsconfig.json
-└── webpack.config.js
+├── webpack.config.js
+└── README.md
 
 ````
 
